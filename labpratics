@@ -1,0 +1,821 @@
+1. Create an XHTML page that provides information about your department. Your 
+XHTML page must use the following tags: 
+a. Text Formatting tags 
+b. Horizontal rule 
+c. Meta element 
+d. Links 
+e. Images 
+f. Tables 
+(If needed use additional tags). 
+
+
+1.html
+<html>
+<body>
+<h1> This is OXFORD COLLEGE OF ENGINEERING</h1>
+<h2>MCA Department</h2>
+<h3>1<sup>st</sup> semester<h3>
+<h4> Web Programming lab</h4>
+<hr/>
+<p><h3> Text Formatting tags </></h3>
+<p><b>hello this is bold</b><i> this is italic </i><strong> this is strong</strong></p>
+<p><em>welcome emphasized</em></p>
+<p>This is<sub> subscript</sub> and <sup>superscript</sup></p>
+<hr/><h3> Links</></h3>
+<a href="http://www.toce.com" target="_blank">Visit toce.com!</a>
+<hr/>
+<h3>Image</h3>
+<img src="sunset.jpeg" alt="Sunset” width="100" height="100"/>
+<hr/>
+<h3>Tables</h3>
+<table border="1">
+<tr>
+<td>100</td> <td>200</td> <td>300</td>
+</tr>
+<tr>
+<td>400</td> <td>500</td> <td>600</td>
+</tr>
+</table>
+</body>
+</html>
+
+
+2. Develop and demonstrate the usage of inline, external and internal style sheet using CSS. 
+Use XHTML page that contains at least three paragraphs of text, listed elements and a 
+table with four rows and four columns. 
+
+
+2.html
+<html>
+<head>
+<link href="special.css" rel="stylesheet" type="text/css">
+</head>
+<style type='text/css'>
+ ul.a {
+ list-style-type: circle;
+ }
+ ol.b {
+ list-style-type: upper-roman;
+ }
+ table, th, td {
+ border: 1px solid black;
+ text-align:left;
+ width:200;
+ height:50;
+ padding:10pt;
+ }
+</style>
+<body bgcolor=pink>
+ <h1 style="color:blue">Example of inline stylesheets</h1>
+<p style="color:red"><font face="Verdana">Header1</font></p>
+<p style="color:blue"><font face="Arial" size="12">Header2</font></p>
+<p style="color:red"><font face="Times New Roman" size="11">header3</font></p>
+<p class="special">this paragraph should have special green text.
+Unordered List items<ul class="a">
+<li>A</li>
+<li>B</li>
+<li>C</li>
+</ul><br/>
+Ordered List items<ol class="b">
+<li>A</li>
+<li>B</li>
+<li>C</li>
+</ol><br/>
+<table >
+<tr><th>SlNo</th><th>Name</th><th>Contact</th><th>Location</th></tr>
+<tr><td>1</td><td>ABC</td><td>12213213</td><td>Bangalore</td></tr>
+<tr><td>2</td><td>DEF</td><td>453545</td><td>Chennai</td></tr>
+<tr><td>3</td><td>XYZ</td><td>46456546</td><td>Delhi</td></tr>
+</table>
+</body>
+</html>
+Save file as: special.css
+P.special {
+color: blue;
+border: solid red;
+}
+
+
+3a.html
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtm111/DTD/xhtm111.dtd">
+<html xmlns ="http://www.w3.org/1999/xhtml">
+<head><title> Lab1a</title></head>
+<body>
+<h1>Calculating The Fibonacci Number :</h1>
+<hr/>
+<script type="text/javascript">
+var var1 = 0;
+var var2 = 1;
+var var3;
+var num = prompt("Enter the limit to generate fibonacci no","");
+if(num==0)
+{
+alert("INVALID NUMBER");
+}
+else
+{
+if(num==1)
+{
+document.write(var1+"<br />");
+}
+else
+{
+document.write(var1+"<br />");
+document.write(var2+"<br />");
+for(var i=2; i < num;i++)
+{
+var3 = var1 + var2;
+var1 = var2;
+var2 = var3;
+document.write(var3+"<br />");
+}
+}
+}
+</script> </body> </html>
+
+
+b)Input : A number n obtained using prompt Output : A table of numbers from 1 to n and 
+their squares using alert
+
+3b.html
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtm111/DTD/xhtm111.dtd">
+<html xmlns ="http://www.w3.org/1999/xhtml">
+<head><title>lab1b</title></head>
+<body>
+<center>
+<h1>CALCULATING SQUARE OF NUMBER</h1>
+<hr/>
+<table border="border">
+<script type="text/javascript">
+var num = prompt("ENTER THE LIMIT TO GENERATE SQUARE 
+NUMBERS"," ");
+var j = "";
+ if(num<=0)
+ {
+alert("ENTER A VALID NUMBER");
+ }
+ for (var i = 1; i <= num; i++) 
+ {
+j += i + " " + i*i + " " + i*i*i + "\n";
+ }
+ 
+ alert(j);
+</script>
+</body>
+</html>
+
+
+4a.html
+<html>
+<head>
+<title> program 5 </title>
+<script type="text/javascript">
+function calculate()
+{
+var c1=document.getElementById("c1");
+ c2=document.getElementById("c2");
+ c3=document.getElementById("c3");
+t1=document.getElementById("t1");
+t2=document.getElementById("t2");
+t3=document.getElementById("t3");
+total = 0;
+if(c1.checked)
+{
+total += +c1.value;
+}
+if(c2.checked)
+{
+total += +c2.value;
+}
+if(c3.checked)
+{
+total += +c3.value;
+}
+tax = total * 0.05;
+tax = tax.toFixed(2);
+t1 = +tax + +total;
+alert('Total cost \t \t= ' + total +'\n sales tax(5%O) \t= '+ tax +'\n-------------------\n' + 'your total 
+cost \t= ' + t1 );
+}
+</script>
+</head>
+<body>
+<center>
+<form method="">
+<h1> <u>WELCOME TO FRUITS SHOP </u></h1> <br/> <br/>
+<table>
+<tr>
+<td>
+<input type="checkbox" name="c1" id="c1" value="59"/>
+Apples(59/-)
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="c2" id="c2" value="49"/> 
+Orange(49/-)
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="c3" id="c3" value="39"/>
+Banana(39/-)
+</td>
+</tr>
+</table>
+<br/>
+<input type="submit" value="SUBMIT" onClick="calculate()"/>
+</form>
+</center>
+</body>
+</html>
+
+
+4b. Modify the document to accept quantity for each item using textboxes
+Save file as:4b.html
+<html>
+<head>
+<title> program 5 </title>
+<script type="text/javascript">
+function showhide1(c1)
+{
+var t1 = document.getElementById("t1");
+t1.style.display = c1.checked ? "block" : "none";
+}
+function showhide2(c2)
+{
+var t2 = document.getElementById("t2");
+t2.style.display = c2.checked ? "block" : "none";
+}
+function showhide3(c3)
+{
+var t3 = document.getElementById("t3");
+t3.style.display = c3.checked ? "block" : "none";
+}
+function calculate()
+{
+var c1=document.getElementById("c1");
+var c2=document.getElementById("c2");
+var c3=document.getElementById("c3");
+var t1=document.getElementById("t1");
+var t2=document.getElementById("t2");
+var t3=document.getElementById("t3");
+total=0;
+if(c1.checked)
+{
+total += +c1.value *t1.value;
+}
+if(c2.checked)
+{
+total += +c2.value*t2.value;
+}
+if(c3.checked)
+{
+total += +c3.value*t3.value;
+}
+tax = total * 0.05;
+ tax = tax.toFixed(2);
+ t1 = +tax + +total;
+alert("Total cost \t \t= " + total +"\n sales tax(5%) \t= "+ tax +"\n-------------------\n" + "your total 
+cost \t= " + t1 );
+}
+</script>
+</head>
+<body>
+<center>
+<form method="">
+<h1> <U> WELCOME TO FRUITS SHOP</U> </h1><BR/><BR/>
+<table>
+<tr>
+<td>
+<input type="checkbox" name="c1" id="c1" value="59" 
+onclick="showhide1(this)"/> 
+Apples(59/-)
+</td>
+<td>
+<input type="text" id="t1" value="1" style="display:none;" size="2"/>
+</td>
+</tr>
+<tr>
+<td>
+ <input type="checkbox" name="c2" id="c2" value="49" onclick="showhide2(this)"/> 
+ Orange(49/-)
+</td>
+<td>
+<input type="text" id="t2" value="1" style="display:none;" size="2"/>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="c3" id="c3" value="39" 
+onclick="showhide3(this)"/>
+Banana(39/-)
+</td>
+<td>
+<input type="text" id="t3" value="1" style="display:none;" size="2"/>
+</td>
+</tr>
+</table>
+<BR/> <BR/>
+<input type="submit" value="SUBMIT" onclick="calculate()"/>
+</form>
+</CENTER>
+</body>
+</html>
+
+
+5a.html
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml 
+1.1/xhtml//dtd">
+<html>
+<head><title>Program Lab5a</title>
+<script type="text/javascript">
+function validate(usn)
+{ var patt=/[1-4][A-Z][A-Z][0-9][0-9][A-Z][A-Z][A-Z][0-9][0-9]/;
+if(!usn.value.match(patt)||usn.value.length>10)
+{ alert("Invalid, Enter valid USN");
+usn.value="";
+return false;
+}
+else
+alert("Its valid USN"); 
+}
+</script>
+</head>
+<body>
+<h1>Checking USN Format</h1>
+<hr/>
+<form>
+Enter USN <input type="text" name="usn" size="30">
+<input type="button" value="check" onclick="validate(usn)">
+</form>
+</body>
+</html>
+
+
+5b.html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<head>
+<head><title>program 5b</title>
+<script type="text/javascript">
+function validate(usn)
+{
+var r=0;
+var patt=/[1-4][A-Z][A-Z][0-9][0-9][A-Z][A-Z][A-Z][0-9][0-9]/;
+if(!usn.value.match(patt)||usn.value.length>10)
+ {
+alert("invalid, enter valid usn");
+usn="";
+return false;
+ }
+else
+ {
+var dt=new Date();
+var y=parseInt(dt.getFullYear())-2000;
+var m=dt.getMonth();
+var sm=usn.value.substring(3,5);
+var res=y-sm;
+if(m<7)
+ r=res*2;
+else
+ r=res*2+1;
+if(r>0 && r<7)
+ {
+alert("it is valid usn\n sem:"+r);
+ }
+else
+ {
+alert("invalid, enter valid usn");
+usn="";
+return false;
+ }
+ }
+}
+</script>
+</head>
+<body bgcolor="pink" style="font-family:castellar, calibri;">
+<h1>checking usn format</h1>
+<hr />
+<form>
+enterusn:<input type="text" name="usn" size="30">
+<input type="button" value="check" onclick="validate(usn)">
+</form>
+</body>
+</html>
+
+
+6a.html
+<html>
+<head>
+<title>Program 6a</title>
+</head>
+<script type="text/javascript">
+function vovel()
+{
+var n = prompt("Enter a string: ","");
+flag=0;
+for(i=0;i<n.length && flag!=1 ;i++)
+{
+switch(n[i])
+{
+case 'a':
+case 'e':
+case 'i':
+case 'o':
+case 'u': alert("The left most vowel is 
+ present in the position: " +(i+1));
+flag = 1;
+break;
+default : break;
+}
+}
+if(!flag)
+alert("No Vowels found.");
+}
+</script>
+<body onload="vovel()">
+</body>
+</html>
+
+
+6b.html
+<html>
+<head>
+<title>Program 6b</title>
+</head>
+<script type="text/javascript">
+<!--
+function rev()
+{
+var n = prompt("Enter a number: ","");
+var str=0;
+for(i=n.length-1;i>=0;i--)
+str = str*10 + Number(n[i]);
+alert(str);
+}
+-->
+</script>
+<body onload="rev()">
+
+
+7a.html
+<!DOCTYPE html>
+<html>
+<style>
+#myProgress {
+ width: 100%;
+ background-color: yellow;
+}
+#myBar {
+ width: 1%;
+ height: 30px;
+ background-color: green;
+}
+</style>
+<body>
+<h1>JavaScript Progress Bar</h1>
+<div id="myProgress">
+ <div id="myBar"></div>
+</div>
+<br>
+<button onclick="move()">Click Me</button> 
+<script>
+function move() {
+ var elem = document.getElementById("myBar"); 
+ var width = 1;
+ var id = setInterval(frame, 10);
+ function frame() {
+ if (width >= 100) {
+ clearInterval(id);
+ } else {
+ width++; 
+ elem.style.width = width + '%'; 
+ }
+ }
+}
+</script>
+</body>
+</html>
+
+
+7b.html
+<!DOCTYPE html> 
+<html> 
+<body> 
+<video width="400" controls>
+ <source src="file:///C:/Users/mca/Videos/big_buck_bunny.ogv" type="video/mp4">
+ <source src="file:///C:/Users/mca/Videos/big_buck_bunny.ogv" type="video/ogg">
+ Your browser does not support HTML5 video.
+</video>
+<p>
+Video courtesy of 
+<a href="file:///C:/Users/mca/Videos/big_buck_bunny.ogv">Big Buck Bunny</a>.
+</p>
+</body> 
+</html>
+
+
+8a.html
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml 1.1/xhtml//dtd">
+<head>
+<title>The Stacking Order</title>
+<style type="text/css">
+.layer1
+{
+border:solid thick black;
+padding:lcm;
+width:350px;
+height:100px;
+background-color:rgb(0,255,0);
+position:absolute;
+top:100px;
+left:200px;
+z-index:0;
+}
+.layer2
+{
+border:dashed thick red;
+padding:1cm;
+width:300px;
+background-color:rgb(100,100,255);
+position:absolute;
+top:120px;
+left:50px;
+z-index:0;
+}
+.layer3
+{
+border:dotted thick green;
+padding:1cm;
+width:300px;
+background-color:purple;
+position:absolute;
+top:140px;
+left:240px;
+z-index:0;
+}
+</style>
+<script type="text/javascript">
+var topLayer="layer3";
+function mover(toTop)
+{ 
+var oldTop=document.getElementById(topLayer).style;
+var newTop=document.getElementById(toTop).style;
+oldTop.zIndex="0";
+newTop.zIndex="10";
+topLayer=document.getElementById(toTop).id;
+}
+</script>
+</head>
+<body>
+<h2>Program include Xhtml document to show the stacking of paragraphs</h2><hr/>
+<div style="z-index:10" class="layer1" id="layer1" onmouseover="mover('layer1')">Hi Friends</div>
+<div style="z-index:2"; class="layer2" id="layer2" onmouseover="mover('layer2')">Good morning</div>
+<div style="z-index:0" class="layer3" id="layer3" onmouseover="mover('layer3')">Have a nice day</div>
+</body>
+</html>
+
+
+8b.html
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml 1.1/xhtml//dtd">
+<head>
+<title>The Stacking Order</title>
+<style type="text/css">
+ .layer1style
+{ border:solid thick black;
+padding:lcm;
+width:300px;
+height:200px;
+background-color:green;
+position:absolute;
+top:100px;
+left:200px;
+z-index:0;
+ }
+ .layer2style
+ { border:solid thick red;
+padding:1cm;
+width:300px;
+height:200px;
+background-color:blue;
+position:absolute;
+top:120px;
+left:220px;
+z-index:0;
+ }
+ .layer3style
+ { border:solid thick green;
+padding:1cm;
+width:300px;
+height:200px;
+background-color:purple;
+position:absolute;
+top:140px;
+left:240px;
+z-index:0;
+ }
+</style>
+<script type="text/javascript">
+vartopLayer="layer3";
+varorigpos;
+function mover(toTop,pos)
+{ varnewTop=document.getElementById(toTop).style;
+newTop.zIndex="10";
+topLayer=document.getElementById(toTop).id;
+origpos=pos;
+}
+functionmoveback()
+{
+document.getElementById(topLayer).style.zIndex=origpos;
+}
+</script>
+</head>
+<body>
+<h2>Program include Xhtml document to show the stacking of paragraphs.</h2>
+<div style="z-index:10" class="layer1style" id="layer1" onmouseover="mover('layer1','1')" 
+onmouseout="moveback()">Engg College</div>
+<div style="z-index:2"; class="layer2style" id="layer2" onmouseover="mover('layer2','2')" 
+onmouseout="moveback()">MCA Dept</div>
+<div style="z-index:0" class="layer3style" id="layer3" onmouseover="mover('layer3','3')" 
+onmouseout="moveback()">First Sem</div>
+</body>
+</html>
+
+
+9.html
+<html>
+<head>
+<title>lab 8</title>
+<link rel="stylesheet" type="text/css" href="view.css"/>
+<script type="text/javascript">
+function add()
+{
+var a=parseInt(document.getElementById("t1").value);
+var b=parseInt(document.getElementById("t2").value);
+ c=a+b;
+document.getElementById("t3").value=c;
+}
+function sub()
+{
+var a=parseInt(document.getElementById("t1").value);
+var b=parseInt(document.getElementById("t2").value);
+ c=a-b;
+document.getElementById("t3").value=c;
+}
+function mul()
+{
+var a=parseInt(document.getElementById("t1").value);
+var b=parseInt(document.getElementById("t2").value);
+ c=a*b;
+document.getElementById("t3").value=c;
+}
+function div()
+{
+var a=parseInt(document.getElementById("t1").value);
+var b=parseInt(document.getElementById("t2").value);
+ c=a/b;
+document.getElementById("t3").value=c;
+}
+</script>
+</head>
+<body>
+<center>
+<h2><u>A Simple Calculator</u></h2><br />
+<form>
+<label>Number1=</label><input type="text" id="t1"/><br/><br/>
+<label>Number2=</label><input type="text" id="t2"/><br/><br/>
+<label>Result=</label><input type="text" id="t3" readonly="readonly"/><br/><br/>
+<input type="button" value="ADD" onclick="add()"/>
+<input type="button" value="SUB" onclick="sub()"/>
+<input type="button" value="MUL" onclick="mul()"/>
+<input type="button" value="DIV" onclick="div()"/>
+<input type="reset" value="CLEAR"/>
+</form>
+</center>
+</body>
+</html>
+view.css
+body{
+color:blue;
+background-color:yellow;
+}
+
+
+10a.html
+<html>
+<head>
+<scripy src="jquery-3.3.1.min.js"</script>
+<style>
+textarea
+{
+display:block;
+margin:1em 0:
+}
+</style>
+</head>
+<body>
+<script>
+$(document).ready(function()
+{
+var maxlength=15;
+$('textarea').keyup(function()
+{
+var textlen=maxlength-$(this).val().length;
+$('#rchars').text(textlen);
+});
+});
+</script>
+<form>
+<label>maximum 15 charcters</label>
+<textarea id="textarea" maxlength="15"></textarea>
+<span id="rchars">15</span>characters remainaing
+</form>
+</body>
+</html>
+
+
+10b.html
+<html>
+<head>
+<script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function()
+{
+$('#ac').click(function() {
+if ($('#sub').is(':disabled')) {
+ $('#sub').removeAttr('disabled');
+ } else {
+ $('#sub').attr('disabled', 'disabled');
+ }
+});
+});
+</script>
+<input id="ac" name="ac" type="checkbox" value="y"/>I accept<br> 
+<input id="sub" disabled="disabled" name="Submit" type="submit" value="Submit" />
+</body>
+</html>
+
+
+11a.html
+<head>
+<title>Fade in and fade out all division elements</title>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+ $("#btn1").click(function(){
+ $("div").fadeOut(3000);
+ });
+ $("#btn2").click(function(){
+ $("div").fadeIn(3000);
+ }); 
+});
+</script>
+</head>
+<body>
+<div style="background:orange;width:100%;">My Effect is fadeOut Effect</div>
+<button id="btn2">Fade In (3 Second)</button>
+<button id="btn1">Fade Out (3 Second)</button>
+</body>
+</html>
+     Q 11b.html
+<html>
+<head>
+<title>Animate an element, by changing its height and width</title>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+$( "#btn1" ).click(function() {
+ $( "#box" ).animate({
+ width: "300px",
+ height: "300px", 
+ }, 3000 );
+});
+$( "#btn2" ).click(function() {
+ $( "#box" ).animate({
+ width: "100px",
+ height: "100px", 
+ }, 1500 );
+});
+});
+</script>
+</head>
+<body>
+<button id="btn1">Animate height & width</button>
+<button id="btn2">Reset</button>
+<div id="box" style="background:brown;height:100px;width:100px;margin:6px;"></div>
+</body>
+</html>
